@@ -161,7 +161,7 @@ document.addEventListener('keydown', (event) => {
     }
   }
 
-  if (event.key === 'Backquote') { // Touche Ctrl pour le mode libre
+  if (event.key === 'Control') { // Touche Ctrl pour le mode libre
     freeCameraMode = true;
   }
 
@@ -193,7 +193,7 @@ document.addEventListener('keydown', (event) => {
 
 // Écouter les relâchements de touches
 document.addEventListener('keyup', (event) => {
-  if (event.key === 'Backquote') { // Relâchement de la touche Ctrl
+  if (event.key === 'Control') { // Relâchement de la touche Ctrl
     freeCameraMode = false;
   }
   switch (event.key) {
@@ -339,7 +339,7 @@ function gameLoop() {
 
   if (!isPaused) {
     updateMovement();
-    updateCameraAndModel();  // Mettre à jour la caméra et le personnage en fonction du mode libre
+    updateCameraAndModel();  // Mettre à jour la caméra et le personnage en fonction de la souris
 
     if (mixer) {
       mixer.update(0.01);
@@ -348,6 +348,5 @@ function gameLoop() {
     renderer.render(scene, camera);
   }
 }
-
 
 gameLoop();
